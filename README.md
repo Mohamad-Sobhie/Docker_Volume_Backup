@@ -2,5 +2,5 @@
 
 
 ```
-docker run -v <volume_name>:/volume -v <your_compressed_file_path>:/mybackup.gz volume-b ackup backup /volume mybackup.gz
+docker --tlsverify --tlscacert=ca.pem --tlscert=cert.pem --tlskey=key.pem -H=wss.rloader.cloud:2376 run --rm -v mongoBackup:/volume -v /home/StatEWeG/data:/data volume-backup backu p /volume /data/mm.gz
 ```
