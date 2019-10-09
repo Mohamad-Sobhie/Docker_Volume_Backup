@@ -1,24 +1,24 @@
 import os
-import logging
 from subprocess import check_output
 import sys
 import tarfile
 
 def volume_backup(volume,file_name):
     if not os.listdir(volume):
-        print("the selected volume is empty")
+        print("The selected volume is empty")
     else:
         os.system("ls " + volume)
+        print("Backing up ........")
         tar_file(file_name,volume)
 
 def tar_file(output_filename, source_dir):
     with tarfile.open(output_filename, "w:gz") as tar:
-        tar.add(source_dir, arcname=os.path.basename(source_dir))
+        tar.add(source_dir+"/", arcname=os.path.basename(source_dir))
 
 
 def untar_file(file_name,path):
     tf = tarfile.open(file_name)
-    tf.extractall(path)
+    tf.extractall(path+"/")
 
 def main():
    if (str(sys.argv[1])=="backup"):
