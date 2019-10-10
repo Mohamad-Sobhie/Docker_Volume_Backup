@@ -4,7 +4,6 @@
 This Docker image serves three different pruposes:
 - Backingup Docker Volumes
 - Restoring a Backup to a Docker Volume
-- Creating a file on your machine and link it to Azure Storage
 
 
 ## Backup a Docker Volume
@@ -27,6 +26,3 @@ For example :
 docker run --rm -v my_restored_volume:/volume -v /home/ubuntu/mybackups/friday-backup.gz:/data/backup.gz volume-backup restore /data/backup.gz /volume
 
 ```
-
-## Creating a file on your machine and link it to Azure Storage
-Not available yet
