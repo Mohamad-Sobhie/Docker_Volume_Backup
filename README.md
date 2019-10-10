@@ -1,4 +1,4 @@
-# Azure_Docker_Volume_Backup
+# Docker_Volume_Backup
 
 ## Goal
 This Docker image serves three different pruposes:
