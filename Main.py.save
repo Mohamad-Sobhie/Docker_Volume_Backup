@@ -9,7 +9,7 @@ def volume_backup(volume,file_name):
     else:
         os.system("ls " + volume)
         print("Backing up ........")
-        tar_file(file_name,volume+"/")
+        tar_file(file_name,volume)
 
 def tar_file(output_filename, source_dir):
     with tarfile.open(output_filename, "w:gz") as tar:
@@ -17,11 +17,9 @@ def tar_file(output_filename, source_dir):
 
 
 def untar_file(file_name,path):
-    os.system("rm -r "+path+"/*")
     tf = tarfile.open(file_name)
-    tf.extractall(path)
-    for f in tf.getmembers():
-        print(f.name)
+    tf.extractall(path+"/")
+
 
 
 def main():
